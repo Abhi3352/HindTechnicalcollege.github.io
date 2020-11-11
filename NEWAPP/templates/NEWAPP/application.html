@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<title>Hind Technical College</title>
+<style>
+  .co{
+    background-color: hotpink;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-top: 1%;
+    
+    height: 2%;
+  }
+  .co h1{
+    color: white;
+    font-size: 200%;
+  }
+</style>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'NEWAPP/application.css' %}">
+</head>
+<body>
+      <!-- MY HEADER  MY HEADER MY HEADER -->
+      <div class="co">
+
+        <h1>HIND TECHNICAL COLLEGE</h1>
+      </div>
+      <!-- MY NAVBAR MY NAVBAR MY NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark"">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Courses
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="application">B.Tech</a>
+                  <a class="dropdown-item" href="application">B.Pharma</a>
+                  <a class="dropdown-item" href="application">D.Pharma</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="contact">Contact Us</a>
+                </li>
+            </ul>          
+          </div>
+        </nav>
+      <!-- MY APPLICATION FORM -->
+
+<div class="container">
+  <form action="appliform" method="POST" >
+    {% csrf_token %}
+    <fieldset>
+        <legend class="leg"> Personal Details </legend>
+        <h5>* Mendate filed</h5>
+  <!-- Full Name -->
+    <div class="row">
+    <div class="col-25">
+      <label for="fname">Full Name* :</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="fullname" placeholder="Enter Your Full name">
+     
+    </div>
+  </div>
+ <!-- dob -->
+  <div class="row">
+    <div class="col-25">
+      <label for="dob">Date of Birth*:</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="dob" name="dob" placeholder="(dd-mm-yyyy)">
+    </div>
+  </div>
+  <!-- gender -->
+  <div class="row">
+    <div class="col-25">
+      <label for="gender">Gender*:</label>
+    </div>
+    <div class="col-75">
+      <select id="gender" name="gender" >
+        <option >Male</option>
+        <option >Female</option>
+        <option >Other</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- email -->
+   <div class="row">
+    <div class="col-25">
+      <label for="email">Email*:</label>
+    </div>
+    <div class="col-75">
+      <input type="email"  id="email" name="email" placeholder="Enter Your Email"> 
+    </div>
+  </div>
+  <!-- Phone number -->
+  <div class="row">
+    <div class="col-25">
+      <label for="ph1">Mobile Number*:</label>
+    </div>
+    <div class="col-75">
+      <input type="tel" id="ph1" name="ph1" placeholder="Enter Your Mobile Number" maxlength="12"> 
+    </div>
+  </div>
+     <!-- categery -->
+  <div class="row">
+    <div class="col-25">
+      <label for="categery">Categery*:</label>
+    </div>
+    <div class="col-75">
+      <select id="categery" name="categ" >
+        <option >General</option>
+        <option >Obc</option>
+        <option >Other</option>
+      </select>
+    </div>
+  </div>
+   <!-- income -->
+   <div class="row">
+    <div class="col-25">
+      <label for="income">Family Income*:</label>
+    </div>
+    <div class="col-75">
+      <select id="income" name="income" >
+        <option >upto 1 lakh</option>
+        <option >more than 1 lakh</option>
+      </select>
+    </div>
+  </div>
+  <!-- Mother's Name -->
+<div class="row">
+  <div class="col-25">
+    <label for="mname">Mother's Name*:</label>
+  </div>
+  <div class="col-75">
+    <input type="text"  id="mname" name="mothername" placeholder="Enter Your Mother Name"> 
+  </div>
+</div>
+<!-- Father's/Guardian's Name -->
+<div class="row">
+  <div class="col-25">
+    <label for="fname">Father's Name*:</label>
+  </div>
+  <div class="col-75">
+    <input type="text"  id="fname" name="fathername" placeholder="Enter Your Father's/Guardian's Name"> 
+  </div>
+</div>
+<!-- Father's/Guardian's Occupation -->
+<div class="row">
+  <div class="col-25">
+    <label for="foc">Father's Occupation*:</label>
+  </div>
+  <div class="col-75">
+    <input type="text"  id="foc" name="fatheroccu" placeholder="Enter Your Father's/Guardian's Occupation"> 
+  </div>
+</div>
+<!-- Alternate Mobile Number -->
+<div class="row">
+  <div class="col-25">
+    <label for="ph2">Alternate Mobile Number:</label>
+  </div>
+  <div class="col-75">
+    <input type="tel"   id="ph2" name="ph2" placeholder="Enter Your Alternate Mobile Number" maxlength="10">
+   </div>
+</div>
+<!--Alternate Email  -->
+<div class="row">
+  <div class="col-25">
+    <label for="email1">Alternate Email:</label>
+  </div>
+  <div class="col-75">
+    <input type="email"  id="email1" name="email1" placeholder="Enter Your Alternate Email"> 
+  </div>
+</div>
+</fieldset>
+<!-- Address Details -->
+<fieldset>
+<legend class="leg"> Address Details </legend>
+<!-- Corresponding Address -->
+<div class="row">
+  <div class="col-25">
+    <label for="cadd">Corresponding Address*:</label>
+  </div>
+  <div class="col-75">
+    <input type="text"  id="cadd" name="cadd" placeholder="Enter Your Corresponding Address ">  
+  </div>
+</div>
+<!-- Permanent Address -->
+<div class="row">
+  <div class="col-25">
+    <label for="padd">Permanent Address*:</label>
+  </div>
+  <div class="col-75">
+    <input type="text"  id="padd" name="padd" placeholder="Enter Your Permanent Address ">  
+  </div>
+</div>
+</fieldset>
+<!-- Examination Details -->
+<fieldset>
+  <legend class="leg"> Examination Details </legend>
+  <h3> * All the given field is based on Intermediate Education</h3>
+  <!-- Board of Examination -->
+  <div class="row">
+    <div class="col-25">
+      <label for="boe">Board Of Education* :</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="boe" name="boe" placeholder="Enter Your Board Of Education"> 
+    </div>
+  </div>
+  <!-- roll no -->
+  <div class="row">
+    <div class="col-25">
+      <label for="roll">Board Roll Number* :</label>
+    </div>
+    <div class="col-75">
+      <input type="text" maxlength="15" id="roll" name="brn" placeholder="Enter Your Board Roll Number"> 
+    </div>
+  </div>
+  <!-- Year of Passing -->
+  <div class="row">
+    <div class="col-25">
+      <label for="yop">Year Of Passing* :</label>
+    </div>
+    <div class="col-75">
+      <input type="text"  id="yop" name="yop" placeholder="Enter Year Of Passing" maxlength="4"> 
+    </div>
+  </div>
+  <!-- Subject No. -->
+  <div class="row">
+    <div class="col-25">
+      <label for="mm">Mathematics Marks</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="mm" name="math" placeholder="Enter Your Maximun Marks/Minimum Marks(100/90)" maxlength="10">
+     </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="cm">Physics Marks</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="cm" name="physics" placeholder="Enter Your Maximun Marks/Minimum Marks(100/90)" maxlength="10">
+     </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="pm">Chemistry Marks</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="pm" name="chemistry" placeholder="Enter Your Maximun Marks/Minimum Marks(100/90)" maxlength="10">
+     </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="tm">Total Marks</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="tm" name="totalmarks" placeholder="Enter Your Total Maximun Marks/Total Minimum Marks(300/270)" maxlength="10">
+     </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="perm">Percentage Marks</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="perm" name="perc" placeholder="Enter Your Percentage" maxlength="10">
+     </div>
+  </div>
+  </fieldset>
+  <fieldset>
+  <legend class="leg">Courses</legend>
+     <!-- Courses -->
+     <div class="row">
+      <div class="col-25">
+        <label for="catagery">Coures*:</label>
+      </div>
+      <div class="col-75">
+        <select id="catagery" name="coures1" >
+          <option >B.Tech(Electronics & communication Engineering(ECE))</option>
+          <option >B.Tech(Electrial & Electronics Engineering(EN))</option>
+          <option >B.Tech(Mechanical Engineering(ME)</option>
+          <option >B.Tech(Computer Science & Engineering(CSE)</option>
+          <option >B.Tech(Information Technology (IT))</option>
+          <option >B.Tech(Civil Engineering(CE))</option>
+          <option >B.Tech(Electrical Engineering(EE))</option>
+          <option >B.Pharma</option>
+          <option >D.Pharma</option>
+        </select>
+      </div>
+    </div>
+  
+  
+  
+  </fieldset>
+
+
+</fieldset>
+<br>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>
+
+</body>
+</html>
+
